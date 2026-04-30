@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hallescape - Eventos para Empresas</title>
+  <title>Hallescape - Team Building y Eventos para Empresas</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <!-- HEADER -->
 <header>
-  <button class="hamburger" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
+  <button class="hamburger" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
   </button>
   <div class="logo">Hallescape</div>
   <nav id="mainNav">
     <a href="#" onclick="closeMenu()">Inicio</a>
-    <a href="#experiencias" onclick="closeMenu()">Experiencias</a>
+    <a href="#selector" onclick="closeMenu()">Que necesitas</a>
+    <a href="#catalogo" onclick="closeMenu()">Experiencias</a>
     <a href="#empresas" onclick="closeMenu()">Empresas</a>
-    <a href="#particulares" onclick="closeMenu()">Particulares</a>
+    <a href="#precios" onclick="closeMenu()">Precios</a>
+    <a href="#testimonios" onclick="closeMenu()">Clientes</a>
     <a href="#contacto" onclick="closeMenu()">Contacto</a>
   </nav>
 </header>
@@ -28,102 +28,377 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <p class="hero-tag">Barcelona · Escape Room</p>
-    <h1>Vive la experiencia.<br>Supera el misterio.</h1>
-    <p class="hero-sub">Diseñamos eventos de escape room para empresas, grupos y celebraciones particulares.<br>Team building, fiestas, despedidas y eventos a medida.</p>
-    <a href="#contacto" class="btn">Solicitar presupuesto</a>
+    <p class="hero-tag">Para RRHH &middot; Managers &middot; Startups &middot; Grandes Empresas</p>
+    <h1>Mejora el trabajo en equipo con experiencias inmersivas para empresas</h1>
+    <p class="hero-sub">Resolvemos problemas reales: falta de comunicacion, motivacion, onboarding y cohesion de equipos. A traves de escape rooms y dinamicas profesionales a medida.</p>
+    <div class="hero-btns">
+      <a href="#selector" class="btn">Encuentra tu experiencia</a>
+      <a href="#contacto" class="btn-ghost">Solicitar propuesta</a>
+    </div>
   </div>
 </section>
 
-<!-- EXPERIENCIAS -->
-<section id="experiencias" class="section-dark">
+<!-- BARRA DE CONFIANZA -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-num">+200</span><span>Empresas atendidas</span></div>
+  <div class="trust-item"><span class="trust-num">8</span><span>Anos de experiencia</span></div>
+  <div class="trust-item"><span class="trust-num">4.9&#9733;</span><span>Valoracion media</span></div>
+  <div class="trust-item"><span class="trust-num">+5.000</span><span>Participantes</span></div>
+</div>
+
+<!-- SELECTOR INTELIGENTE -->
+<section id="selector" class="section-light">
   <div class="wrapper">
-    <h2 class="section-title">Nuestras Experiencias</h2>
-    <p class="section-sub">Dos aventuras únicas que pondrán a prueba tu ingenio y trabajo en equipo</p>
+    <h2 class="section-title dark">Que experiencia necesitas?</h2>
+    <p class="section-sub dark">Responde 3 preguntas y te recomendamos la mejor opcion para tu equipo</p>
+    <div class="quiz" id="quiz">
+
+      <div class="quiz-step active" id="step-personas">
+        <h3>Cuantas personas sois?</h3>
+        <div class="quiz-options">
+          <button onclick="quizAnswer('personas','pequeno','step-objetivo')">Menos de 10</button>
+          <button onclick="quizAnswer('personas','mediano','step-objetivo')">10 - 30</button>
+          <button onclick="quizAnswer('personas','grande','step-objetivo')">30 - 50</button>
+          <button onclick="quizAnswer('personas','corporativo','step-objetivo')">Mas de 50</button>
+        </div>
+      </div>
+
+      <div class="quiz-step" id="step-objetivo">
+        <h3>Cual es el objetivo principal?</h3>
+        <div class="quiz-options">
+          <button onclick="quizAnswer('objetivo','comunicacion','step-modalidad')">Mejorar comunicacion</button>
+          <button onclick="quizAnswer('objetivo','motivacion','step-modalidad')">Motivar al equipo</button>
+          <button onclick="quizAnswer('objetivo','onboarding','step-modalidad')">Onboarding</button>
+          <button onclick="quizAnswer('objetivo','celebracion','step-modalidad')">Celebracion / Fin de ano</button>
+        </div>
+      </div>
+
+      <div class="quiz-step" id="step-modalidad">
+        <h3>Que modalidad preferis?</h3>
+        <div class="quiz-options">
+          <button onclick="quizAnswer('modalidad','presencial','resultado')">Presencial</button>
+          <button onclick="quizAnswer('modalidad','online','resultado')">Online</button>
+          <button onclick="quizAnswer('modalidad','hibrido','resultado')">Hibrido</button>
+        </div>
+      </div>
+
+      <div class="quiz-step" id="resultado">
+        <div class="quiz-result" id="quiz-result"></div>
+        <button class="btn-ghost-dark" onclick="resetQuiz()">Volver a empezar</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGO FILTRABLE -->
+<section id="catalogo" class="section-dark">
+  <div class="wrapper">
+    <h2 class="section-title">Catalogo de Experiencias</h2>
+    <p class="section-sub">Filtra por objetivo para encontrar la experiencia perfecta</p>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterExp('todos', this)">Todos</button>
+      <button class="filter-btn" onclick="filterExp('comunicacion', this)">Comunicacion</button>
+      <button class="filter-btn" onclick="filterExp('liderazgo', this)">Liderazgo</button>
+      <button class="filter-btn" onclick="filterExp('motivacion', this)">Motivacion</button>
+      <button class="filter-btn" onclick="filterExp('celebracion', this)">Celebracion</button>
+    </div>
     <div class="exp-cards">
-      <div class="exp-card">
-        <div class="exp-icon">🔬</div>
+      <div class="exp-card" data-obj="comunicacion liderazgo">
+        <div class="exp-badge">Presencial</div>
+        <div class="exp-icon">&#128300;</div>
         <h3>El Virus</h3>
-        <p>Una carrera contrarreloj para salvar a la humanidad. ¿Conseguirás encontrar la cura a tiempo?</p>
+        <p>Carrera contrarreloj para salvar a la humanidad. Potencia la comunicacion bajo presion.</p>
+        <div class="exp-meta"><span>&#128101; 5-20 personas</span><span>&#9201; 60 min</span></div>
         <a href="#contacto" class="btn-outline">Reservar</a>
       </div>
-      <div class="exp-card">
-        <div class="exp-icon">🔍</div>
+      <div class="exp-card" data-obj="comunicacion motivacion">
+        <div class="exp-badge">Presencial</div>
+        <div class="exp-icon">&#128269;</div>
         <h3>El Asesino</h3>
-        <p>Conviértete en detective y resuelve un crimen antes de que el culpable escape para siempre.</p>
+        <p>Resuelve un crimen en equipo. Ideal para trabajar la escucha activa y toma de decisiones.</p>
+        <div class="exp-meta"><span>&#128101; 5-20 personas</span><span>&#9201; 60 min</span></div>
+        <a href="#contacto" class="btn-outline">Reservar</a>
+      </div>
+      <div class="exp-card" data-obj="motivacion celebracion">
+        <div class="exp-badge">Presencial / Online</div>
+        <div class="exp-icon">&#127908;</div>
+        <h3>Dinamicas de Grupo</h3>
+        <p>Actividades para romper el hielo y cohesionar equipos en cualquier momento del ano.</p>
+        <div class="exp-meta"><span>&#128101; 10-50 personas</span><span>&#9201; 90 min</span></div>
+        <a href="#contacto" class="btn-outline">Reservar</a>
+      </div>
+      <div class="exp-card" data-obj="liderazgo comunicacion">
+        <div class="exp-badge">Hibrido</div>
+        <div class="exp-icon">&#129513;</div>
+        <h3>Escape Room Online</h3>
+        <p>La misma emocion del escape room adaptada para equipos remotos o distribuidos.</p>
+        <div class="exp-meta"><span>&#128101; 5-30 personas</span><span>&#9201; 60 min</span></div>
+        <a href="#contacto" class="btn-outline">Reservar</a>
+      </div>
+      <div class="exp-card" data-obj="celebracion motivacion">
+        <div class="exp-badge">Presencial</div>
+        <div class="exp-icon">&#127942;</div>
+        <h3>Evento de Fin de Ano</h3>
+        <p>Cierra el ano por todo lo alto con una experiencia memorable para toda la empresa.</p>
+        <div class="exp-meta"><span>&#128101; 20-100 personas</span><span>&#9201; 2-3 h</span></div>
+        <a href="#contacto" class="btn-outline">Reservar</a>
+      </div>
+      <div class="exp-card" data-obj="comunicacion liderazgo motivacion">
+        <div class="exp-badge">Presencial / Hibrido</div>
+        <div class="exp-icon">&#128640;</div>
+        <h3>Onboarding Experiencial</h3>
+        <p>Integra a los nuevos empleados de forma dinamica y memorable desde el primer dia.</p>
+        <div class="exp-meta"><span>&#128101; 5-30 personas</span><span>&#9201; 2 h</span></div>
         <a href="#contacto" class="btn-outline">Reservar</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- POR QUÉ ELEGIRNOS -->
-<section class="section-light">
+<!-- EMPRESAS: CASOS DE USO -->
+<section id="empresas" class="section-light">
   <div class="wrapper">
-    <h2 class="section-title dark">¿Por qué elegirnos?</h2>
-    <div class="features">
-      <div class="feature">
-        <div class="feature-icon">🏆</div>
-        <h4>Experiencia única</h4>
-        <p>Cada sesión es diferente. Vivencias que no olvidarás.</p>
+    <h2 class="section-title dark">Soluciones para Empresas</h2>
+    <p class="section-sub dark">Cada evento resuelve un problema real de tu equipo</p>
+    <div class="use-cases">
+      <div class="use-case">
+        <div class="use-icon">&#128640;</div>
+        <h4>Onboarding</h4>
+        <p>Integra a los nuevos empleados desde el primer dia con una experiencia que fomenta las relaciones y el sentido de pertenencia.</p>
       </div>
-      <div class="feature">
-        <div class="feature-icon">👥</div>
-        <h4>Para todos los grupos</h4>
-        <p>Adaptamos la dificultad y el formato a tu equipo.</p>
+      <div class="use-case">
+        <div class="use-icon">&#129309;</div>
+        <h4>Integracion de equipos</h4>
+        <p>Fusiona departamentos, equipos remotos o recien formados a traves de retos compartidos que crean vinculos reales.</p>
       </div>
-      <div class="feature">
-        <div class="feature-icon">⏱️</div>
-        <h4>60 minutos de tensión</h4>
-        <p>El reloj corre. Solo la cooperación os sacará de aquí.</p>
+      <div class="use-case">
+        <div class="use-icon">&#127873;</div>
+        <h4>Incentivos y premios</h4>
+        <p>Recompensa a tu equipo con una experiencia que van a recordar. Una alternativa diferente a los incentivos tradicionales.</p>
       </div>
-      <div class="feature">
-        <div class="feature-icon">🎯</div>
-        <h4>Eventos a medida</h4>
-        <p>Personalizamos el evento según tu objetivo o celebración.</p>
+      <div class="use-case">
+        <div class="use-icon">&#127882;</div>
+        <h4>Evento de fin de ano</h4>
+        <p>Cierra el ano con energia y una experiencia compartida que refuerza el orgullo de equipo.</p>
+      </div>
+      <div class="use-case">
+        <div class="use-icon">&#128226;</div>
+        <h4>Comunicacion interna</h4>
+        <p>Mejora los canales de comunicacion entre perfiles distintos mediante dinamicas que rompen barreras y jerarquias.</p>
+      </div>
+      <div class="use-case">
+        <div class="use-icon">&#129504;</div>
+        <h4>Desarrollo del liderazgo</h4>
+        <p>Situaciones de presion controlada que permiten identificar y potenciar lideres naturales dentro del equipo.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EMPRESAS -->
-<section id="empresas" class="section-dark">
+<!-- COMPARADOR -->
+<section class="section-dark">
   <div class="wrapper">
-    <h2 class="section-title">Eventos para Empresas</h2>
-    <p class="section-sub">Refuerza los lazos de tu equipo con una experiencia fuera de lo común</p>
-    <div class="cards">
-      <div class="card">
-        <h3>🤝 Team Building</h3>
-        <p>Mejora la comunicación, la confianza y el trabajo en equipo de forma divertida.</p>
+    <h2 class="section-title">Compara nuestras experiencias</h2>
+    <p class="section-sub">Elige la que mejor encaja con tu equipo</p>
+    <div class="table-wrap">
+      <table class="comparador">
+        <thead>
+          <tr>
+            <th>Experiencia</th>
+            <th>Personas</th>
+            <th>Duracion</th>
+            <th>Objetivo</th>
+            <th>Modalidad</th>
+            <th>Intensidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>El Virus</strong></td>
+            <td>5 - 20</td>
+            <td>60 min</td>
+            <td>Comunicacion</td>
+            <td>Presencial</td>
+            <td>&#9889;&#9889;&#9889;</td>
+          </tr>
+          <tr>
+            <td><strong>El Asesino</strong></td>
+            <td>5 - 20</td>
+            <td>60 min</td>
+            <td>Toma de decisiones</td>
+            <td>Presencial</td>
+            <td>&#9889;&#9889;&#9889;</td>
+          </tr>
+          <tr>
+            <td><strong>Dinamicas de Grupo</strong></td>
+            <td>10 - 50</td>
+            <td>90 min</td>
+            <td>Cohesion</td>
+            <td>Presencial / Online</td>
+            <td>&#9889;&#9889;</td>
+          </tr>
+          <tr>
+            <td><strong>Escape Room Online</strong></td>
+            <td>5 - 30</td>
+            <td>60 min</td>
+            <td>Comunicacion</td>
+            <td>Online / Hibrido</td>
+            <td>&#9889;&#9889;</td>
+          </tr>
+          <tr>
+            <td><strong>Fin de Ano</strong></td>
+            <td>20 - 100</td>
+            <td>2 - 3 h</td>
+            <td>Celebracion</td>
+            <td>Presencial</td>
+            <td>&#9889;</td>
+          </tr>
+          <tr>
+            <td><strong>Onboarding</strong></td>
+            <td>5 - 30</td>
+            <td>2 h</td>
+            <td>Integracion</td>
+            <td>Presencial / Hibrido</td>
+            <td>&#9889;&#9889;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios" class="section-light">
+  <div class="wrapper">
+    <h2 class="section-title dark">Precios orientativos</h2>
+    <p class="section-sub dark">Sin sorpresas. Packs pensados para cada tipo de empresa</p>
+    <div class="pricing">
+      <div class="price-card">
+        <h3>Basico</h3>
+        <div class="price">Desde <strong>15&euro;</strong><span>/persona</span></div>
+        <ul>
+          <li>&#10003; 1 experiencia (60 min)</li>
+          <li>&#10003; Hasta 20 personas</li>
+          <li>&#10003; Modalidad presencial</li>
+          <li>&#10003; Monitor incluido</li>
+          <li>&#10007; Personalizacion</li>
+        </ul>
+        <a href="#contacto" class="btn">Solicitar</a>
       </div>
-      <div class="card">
-        <h3>🕵️ Caza del Asesino</h3>
-        <p>Una experiencia inmersiva llena de misterio ideal para grupos corporativos.</p>
+      <div class="price-card featured">
+        <div class="price-badge">Mas popular</div>
+        <h3>Profesional</h3>
+        <div class="price">Desde <strong>25&euro;</strong><span>/persona</span></div>
+        <ul>
+          <li>&#10003; 2 experiencias combinadas</li>
+          <li>&#10003; Hasta 50 personas</li>
+          <li>&#10003; Presencial, online o hibrido</li>
+          <li>&#10003; Monitor + coordinador</li>
+          <li>&#10003; Branding basico</li>
+        </ul>
+        <a href="#contacto" class="btn">Solicitar</a>
       </div>
-      <div class="card">
-        <h3>✨ Eventos Personalizados</h3>
-        <p>Adaptamos la experiencia a los valores y objetivos de tu empresa.</p>
+      <div class="price-card">
+        <h3>Corporativo</h3>
+        <div class="price"><strong>A medida</strong></div>
+        <ul>
+          <li>&#10003; Experiencia personalizada</li>
+          <li>&#10003; Sin limite de personas</li>
+          <li>&#10003; Cualquier modalidad</li>
+          <li>&#10003; Branding completo</li>
+          <li>&#10003; Historia y retos a medida</li>
+        </ul>
+        <a href="#contacto" class="btn">Contactar</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONALIZACION -->
+<section class="section-dark">
+  <div class="wrapper custom-section">
+    <div class="custom-text">
+      <h2>Disenamos experiencias a medida para tu empresa</h2>
+      <p>No tienes que encajar en un pack estandar. Adaptamos cada detalle a tu equipo, tus objetivos y tu identidad corporativa.</p>
+      <ul class="custom-list">
+        <li>&#127912; Branding de tu empresa integrado en el juego</li>
+        <li>&#128214; Historias y retos personalizados</li>
+        <li>&#128205; Eventos en tus propias oficinas</li>
+        <li>&#127760; Disponible en modalidad online o hibrida</li>
+        <li>&#127919; Alineado con tus objetivos de RRHH</li>
+      </ul>
+      <a href="#contacto" class="btn">Hablemos de tu proyecto</a>
+    </div>
+    <div class="custom-visual">
+      <div class="custom-placeholder">&#10024;<br>Experiencia<br>a medida</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios" class="section-light">
+  <div class="wrapper">
+    <h2 class="section-title dark">Lo que dicen nuestros clientes</h2>
+    <p class="section-sub dark">Empresas que ya han confiado en Hallescape</p>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Contratamos el escape room para nuestro evento de fin de ano y fue un exito total. El equipo salio encantado y hablando del evento semanas despues."</p>
+        <div class="testimonial-author">
+          <div class="avatar">MG</div>
+          <div>
+            <strong>Maria Garcia</strong>
+            <span>Directora de RRHH &middot; TechCorp</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>"Lo usamos para el onboarding de 15 nuevos empleados. Fue la forma mas efectiva de romper el hielo que hemos probado. Lo repetiremos sin duda."</p>
+        <div class="testimonial-author">
+          <div class="avatar">JP</div>
+          <div>
+            <strong>Jordi Puig</strong>
+            <span>People Manager &middot; StartupBCN</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>"Teniamos dos departamentos que no se comunicaban bien. Despues del evento notamos un cambio real en la dinamica del equipo. Muy recomendable."</p>
+        <div class="testimonial-author">
+          <div class="avatar">RL</div>
+          <div>
+            <strong>Rosa Lopez</strong>
+            <span>CEO &middot; Agencia Creativa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="logos-bar">
+      <span>TechCorp</span>
+      <span>StartupBCN</span>
+      <span>Agencia Creativa</span>
+      <span>GlobalServices</span>
+      <span>InnoGroup</span>
     </div>
   </div>
 </section>
 
 <!-- PARTICULARES -->
-<section id="particulares" class="section-light">
+<section id="particulares" class="section-dark">
   <div class="wrapper">
-    <h2 class="section-title dark">Eventos para Particulares</h2>
-    <p class="section-sub dark">Celebra con estilo y lleva la diversión a otro nivel</p>
+    <h2 class="section-title">Eventos para Particulares</h2>
+    <p class="section-sub">Celebra con estilo y lleva la diversion a otro nivel</p>
     <div class="cards">
-      <div class="card dark-card">
-        <h3>🎂 Cumpleaños</h3>
-        <p>Una forma diferente y memorable de celebrar tu día especial.</p>
+      <div class="card">
+        <h3>&#127874; Cumpleanos</h3>
+        <p>Una forma diferente y memorable de celebrar tu dia especial.</p>
       </div>
-      <div class="card dark-card">
-        <h3>💍 Despedidas</h3>
-        <p>La despedida perfecta: emoción, risas y momentos únicos.</p>
+      <div class="card">
+        <h3>&#128141; Despedidas</h3>
+        <p>La despedida perfecta: emocion, risas y momentos unicos.</p>
       </div>
-      <div class="card dark-card">
-        <h3>🎉 Fiestas y Celebraciones</h3>
+      <div class="card">
+        <h3>&#127881; Fiestas y Celebraciones</h3>
         <p>Cualquier motivo es bueno para vivir una aventura juntos.</p>
       </div>
     </div>
@@ -131,18 +406,34 @@
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="section-dark">
+<section id="contacto" class="section-light">
   <div class="wrapper wrapper-narrow">
-    <h2 class="section-title">Reserva tu experiencia</h2>
-    <p class="section-sub">Cuéntanos qué tienes en mente y te preparamos una propuesta sin compromiso</p>
+    <h2 class="section-title dark">Solicita tu propuesta en 24h</h2>
+    <p class="section-sub dark">Cuentanos que necesitas y te preparamos una propuesta personalizada sin compromiso</p>
     <form class="contact-form">
       <div class="form-row">
-        <input type="text" placeholder="Nombre" required>
-        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Nombre y apellidos" required>
+        <input type="text" placeholder="Empresa" required>
       </div>
-      <input type="text" placeholder="Tipo de evento (empresa, cumpleaños, despedida...)">
-      <textarea placeholder="Cuéntanos tu evento: número de personas, fecha aproximada, preferencias..."></textarea>
-      <button type="submit" class="btn">Enviar solicitud</button>
+      <div class="form-row">
+        <input type="email" placeholder="Email corporativo" required>
+        <input type="tel" placeholder="Telefono">
+      </div>
+      <div class="form-row">
+        <input type="number" placeholder="N de personas" min="1">
+        <input type="date">
+      </div>
+      <select>
+        <option value="" disabled selected>Objetivo del evento</option>
+        <option>Team Building / Comunicacion</option>
+        <option>Onboarding</option>
+        <option>Motivacion e incentivos</option>
+        <option>Evento de fin de ano</option>
+        <option>Celebracion particular</option>
+        <option>Otro</option>
+      </select>
+      <textarea placeholder="Cuentanos mas detalles sobre tu evento..."></textarea>
+      <button type="submit" class="btn">Enviar solicitud &middot; Respuesta en 24h</button>
     </form>
   </div>
 </section>
@@ -152,45 +443,105 @@
   <div class="footer-inner">
     <div class="footer-col">
       <div class="footer-logo">Hallescape</div>
-      <p>Escape room en Barcelona para empresas, grupos y celebraciones particulares.</p>
+      <p>Escape room y team building en Barcelona para empresas, grupos y celebraciones.</p>
     </div>
     <div class="footer-col">
-      <h4>Navegación</h4>
+      <h4>Navegacion</h4>
       <a href="#">Inicio</a>
-      <a href="#experiencias">Experiencias</a>
+      <a href="#catalogo">Experiencias</a>
       <a href="#empresas">Empresas</a>
-      <a href="#particulares">Particulares</a>
+      <a href="#precios">Precios</a>
+      <a href="#testimonios">Clientes</a>
       <a href="#contacto">Contacto</a>
     </div>
     <div class="footer-col">
       <h4>Contacto</h4>
       <p>info@hallescape.com</p>
-      <p>Barcelona, España</p>
+      <p>Barcelona, Espana</p>
+      <p>Respuesta en menos de 24h</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Hallescape · Todos los derechos reservados</p>
+    <p>&copy; 2026 Hallescape &middot; Todos los derechos reservados</p>
   </div>
 </footer>
 
+<!-- WHATSAPP FLOTANTE -->
+<a class="whatsapp-btn" href="https://wa.me/34600000000" target="_blank" title="Escribenos por WhatsApp">
+  &#128172;
+</a>
+
 <script>
-  const btn = document.getElementById('menuBtn');
+  // ── Menu hamburguesa ──
+  const menuBtn = document.getElementById('menuBtn');
   const nav = document.getElementById('mainNav');
 
-  btn.addEventListener('click', () => {
+  menuBtn.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('open');
-    btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', isOpen);
+    menuBtn.classList.toggle('open', isOpen);
+    menuBtn.setAttribute('aria-expanded', isOpen);
   });
 
   document.addEventListener('click', (e) => {
-    if (!btn.contains(e.target) && !nav.contains(e.target)) closeMenu();
+    if (!menuBtn.contains(e.target) && !nav.contains(e.target)) closeMenu();
   });
 
   function closeMenu() {
     nav.classList.remove('open');
-    btn.classList.remove('open');
-    btn.setAttribute('aria-expanded', false);
+    menuBtn.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', false);
+  }
+
+  // ── Selector inteligente ──
+  const quizAnswers = {};
+
+  function quizAnswer(question, value, nextStep) {
+    quizAnswers[question] = value;
+    document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    if (nextStep === 'resultado') {
+      showQuizResult();
+    } else {
+      document.getElementById(nextStep).classList.add('active');
+    }
+  }
+
+  function showQuizResult() {
+    const resultEl = document.getElementById('quiz-result');
+    const { personas, objetivo, modalidad } = quizAnswers;
+    const online = modalidad === 'online' ? ' en formato online' : '';
+    const grande = personas === 'corporativo' || personas === 'grande';
+
+    const recomendaciones = {
+      onboarding:    { titulo: 'Onboarding Experiencial',  desc: `Perfecto para integrar nuevos empleados de forma dinamica${online}.` },
+      comunicacion:  { titulo: 'Escape Room "El Virus"',   desc: `Alta intensidad que obliga al equipo a comunicarse bajo presion${online}.` },
+      motivacion:    { titulo: 'Dinamicas de Grupo',        desc: `Actividades para${grande ? ' grandes grupos' : ' tu equipo'} que generan energia y motivacion real.` },
+      celebracion:   { titulo: 'Evento de Fin de Ano',      desc: `Una experiencia memorable para cerrar el ano con todo el equipo por todo lo alto.` },
+    };
+
+    const rec = recomendaciones[objetivo] || { titulo: 'Experiencia Personalizada', desc: 'Contactanos y disenaremos la experiencia perfecta para tu equipo.' };
+
+    resultEl.innerHTML = `
+      <h3>Te recomendamos: <span>${rec.titulo}</span></h3>
+      <p>${rec.desc}</p>
+      <a href="#contacto" class="btn">Solicitar esta experiencia</a>
+    `;
+    document.getElementById('resultado').classList.add('active');
+  }
+
+  function resetQuiz() {
+    for (const k in quizAnswers) delete quizAnswers[k];
+    document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step-personas').classList.add('active');
+  }
+
+  // ── Filtro de catalogo ──
+  function filterExp(obj, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#catalogo .exp-card').forEach(card => {
+      const cardObj = card.dataset.obj || '';
+      card.style.display = (obj === 'todos' || cardObj.includes(obj)) ? 'flex' : 'none';
+    });
   }
 </script>
 
