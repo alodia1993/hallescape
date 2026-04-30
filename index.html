@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hallescape - Eventos para Empresas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <button class="hamburger" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="logo">Hallescape</div>
+  <nav id="mainNav">
+    <a href="#" onclick="closeMenu()">Inicio</a>
+    <a href="#experiencias" onclick="closeMenu()">Experiencias</a>
+    <a href="#empresas" onclick="closeMenu()">Empresas</a>
+    <a href="#particulares" onclick="closeMenu()">Particulares</a>
+    <a href="#contacto" onclick="closeMenu()">Contacto</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-tag">Barcelona · Escape Room</p>
+    <h1>Vive la experiencia.<br>Supera el misterio.</h1>
+    <p class="hero-sub">Diseñamos eventos de escape room para empresas, grupos y celebraciones particulares.<br>Team building, fiestas, despedidas y eventos a medida.</p>
+    <a href="#contacto" class="btn">Solicitar presupuesto</a>
+  </div>
+</section>
+
+<!-- EXPERIENCIAS -->
+<section id="experiencias" class="section-dark">
+  <div class="wrapper">
+    <h2 class="section-title">Nuestras Experiencias</h2>
+    <p class="section-sub">Dos aventuras únicas que pondrán a prueba tu ingenio y trabajo en equipo</p>
+    <div class="exp-cards">
+      <div class="exp-card">
+        <div class="exp-icon">🔬</div>
+        <h3>El Virus</h3>
+        <p>Una carrera contrarreloj para salvar a la humanidad. ¿Conseguirás encontrar la cura a tiempo?</p>
+        <a href="#contacto" class="btn-outline">Reservar</a>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">🔍</div>
+        <h3>El Asesino</h3>
+        <p>Conviértete en detective y resuelve un crimen antes de que el culpable escape para siempre.</p>
+        <a href="#contacto" class="btn-outline">Reservar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ ELEGIRNOS -->
+<section class="section-light">
+  <div class="wrapper">
+    <h2 class="section-title dark">¿Por qué elegirnos?</h2>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🏆</div>
+        <h4>Experiencia única</h4>
+        <p>Cada sesión es diferente. Vivencias que no olvidarás.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">👥</div>
+        <h4>Para todos los grupos</h4>
+        <p>Adaptamos la dificultad y el formato a tu equipo.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⏱️</div>
+        <h4>60 minutos de tensión</h4>
+        <p>El reloj corre. Solo la cooperación os sacará de aquí.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <h4>Eventos a medida</h4>
+        <p>Personalizamos el evento según tu objetivo o celebración.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPRESAS -->
+<section id="empresas" class="section-dark">
+  <div class="wrapper">
+    <h2 class="section-title">Eventos para Empresas</h2>
+    <p class="section-sub">Refuerza los lazos de tu equipo con una experiencia fuera de lo común</p>
+    <div class="cards">
+      <div class="card">
+        <h3>🤝 Team Building</h3>
+        <p>Mejora la comunicación, la confianza y el trabajo en equipo de forma divertida.</p>
+      </div>
+      <div class="card">
+        <h3>🕵️ Caza del Asesino</h3>
+        <p>Una experiencia inmersiva llena de misterio ideal para grupos corporativos.</p>
+      </div>
+      <div class="card">
+        <h3>✨ Eventos Personalizados</h3>
+        <p>Adaptamos la experiencia a los valores y objetivos de tu empresa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTICULARES -->
+<section id="particulares" class="section-light">
+  <div class="wrapper">
+    <h2 class="section-title dark">Eventos para Particulares</h2>
+    <p class="section-sub dark">Celebra con estilo y lleva la diversión a otro nivel</p>
+    <div class="cards">
+      <div class="card dark-card">
+        <h3>🎂 Cumpleaños</h3>
+        <p>Una forma diferente y memorable de celebrar tu día especial.</p>
+      </div>
+      <div class="card dark-card">
+        <h3>💍 Despedidas</h3>
+        <p>La despedida perfecta: emoción, risas y momentos únicos.</p>
+      </div>
+      <div class="card dark-card">
+        <h3>🎉 Fiestas y Celebraciones</h3>
+        <p>Cualquier motivo es bueno para vivir una aventura juntos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section-dark">
+  <div class="wrapper wrapper-narrow">
+    <h2 class="section-title">Reserva tu experiencia</h2>
+    <p class="section-sub">Cuéntanos qué tienes en mente y te preparamos una propuesta sin compromiso</p>
+    <form class="contact-form">
+      <div class="form-row">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Email" required>
+      </div>
+      <input type="text" placeholder="Tipo de evento (empresa, cumpleaños, despedida...)">
+      <textarea placeholder="Cuéntanos tu evento: número de personas, fecha aproximada, preferencias..."></textarea>
+      <button type="submit" class="btn">Enviar solicitud</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-logo">Hallescape</div>
+      <p>Escape room en Barcelona para empresas, grupos y celebraciones particulares.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <a href="#">Inicio</a>
+      <a href="#experiencias">Experiencias</a>
+      <a href="#empresas">Empresas</a>
+      <a href="#particulares">Particulares</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p>info@hallescape.com</p>
+      <p>Barcelona, España</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Hallescape · Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const nav = document.getElementById('mainNav');
+
+  btn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !nav.contains(e.target)) closeMenu();
+  });
+
+  function closeMenu() {
+    nav.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+  }
+</script>
+
+</body>
+</html>
