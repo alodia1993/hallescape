@@ -18,10 +18,9 @@
     <div class="logo">Hallescape</div>
     <nav id="mainNav">
       <a href="#" onclick="closeMenu()">Inicio</a>
-      <a href="#selector" onclick="closeMenu()">Que necesitas</a>
-      <a href="#catalogo" onclick="closeMenu()">Experiencias</a>
+      <a href="#experiencia" onclick="closeMenu()">La Experiencia</a>
       <a href="#empresas" onclick="closeMenu()">Empresas</a>
-      <a href="#precios" onclick="closeMenu()">Precios</a>
+      <a href="#particulares" onclick="closeMenu()">Particulares</a>
       <a href="#testimonios" onclick="closeMenu()">Clientes</a>
       <a href="#contacto" onclick="closeMenu()">Contacto</a>
     </nav>
@@ -31,20 +30,18 @@
   <section class="hero">
     <div class="hero-content">
       <p class="hero-tag">
-        Para RRHH &middot; Managers &middot; Startups &middot; Grandes
-        Empresas
+        <i class="fa-solid fa-user-secret" style="color: #ff6600;"></i> EL ASESINO &middot; PARA PARTICULARES Y EMPRESAS
       </p>
       <h1>
-        Mejora el trabajo en equipo con experiencias inmersivas para empresas
+        Resuelve un misterio interactivo con tu equipo
       </h1>
       <p class="hero-sub">
-        Resolvemos problemas reales: falta de comunicación, motivación,
-        onboarding y cohesión de equipos. A través de escape rooms y dinámicas
-        profesionales a medida.
+        Trabaja la comunicación, la lógica y el pensamiento crítico bajo presión. Una aventura inmersiva ideal para
+        amigos, colegios y empresas.
       </p>
       <div class="hero-btns">
-        <a href="#selector" class="btn">Encuentra tu experiencia</a>
-        <a href="#contacto" class="btn-ghost">Solicitar propuesto</a>
+        <a href="#experiencia" class="btn">Descubrir la experiencia</a>
+        <a href="#contacto" class="btn-ghost">Solicitar propuesta</a>
       </div>
     </div>
   </section>
@@ -65,419 +62,105 @@
     </div>
   </div>
 
-  <!-- SELECTOR INTELIGENTE -->
-  <section id="selector" class="section-light">
-    <div class="wrapper">
-      <h2 class="section-title dark">¿Qué experiencia necesitas?</h2>
-      <p class="section-sub dark">
-        Responde 3 preguntas y te recomendamos la mejor opción para tu equipo
-      </p>
-      <div class="quiz" id="quiz">
-        <div class="quiz-step active" id="step-personas">
-          <h3>¿Cuántas personas sois?</h3>
-          <div class="quiz-options">
-            <button onclick="quizAnswer('personas', 'pequeno', 'step-objetivo')">
-              Menos de 10
-            </button>
-            <button onclick="quizAnswer('personas', 'mediano', 'step-objetivo')">
-              10 - 30
-            </button>
-            <button onclick="quizAnswer('personas', 'grande', 'step-objetivo')">
-              30 - 50
-            </button>
-            <button onclick="quizAnswer('personas', 'corporativo', 'step-objetivo')">
-              Más de 50
-            </button>
-          </div>
-        </div>
-
-        <div class="quiz-step" id="step-objetivo">
-          <h3>¿Cuál es el objetivo principal?</h3>
-          <div class="quiz-options">
-            <button onclick="
-                  quizAnswer('objetivo', 'comunicacion', 'step-modalidad')
-                ">
-              Mejorar comunicación
-            </button>
-            <button onclick="quizAnswer('objetivo', 'motivacion', 'step-modalidad')">
-              Motivar al equipo
-            </button>
-            <button onclick="quizAnswer('objetivo', 'onboarding', 'step-modalidad')">
-              Onboarding
-            </button>
-            <button onclick="
-                  quizAnswer('objetivo', 'celebracion', 'step-modalidad')
-                ">
-              Celebración / Fin de año
-            </button>
-          </div>
-        </div>
-
-        <div class="quiz-step" id="step-modalidad">
-          <h3>¿Qué modalidad preferís?</h3>
-          <div class="quiz-options">
-            <button onclick="quizAnswer('modalidad', 'presencial', 'resultado')">
-              Presencial
-            </button>
-            <button onclick="quizAnswer('modalidad', 'online', 'resultado')">
-              Online
-            </button>
-            <button onclick="quizAnswer('modalidad', 'hibrido', 'resultado')">
-              Híbrido
-            </button>
-          </div>
-        </div>
-
-        <div class="quiz-step" id="resultado">
-          <div class="quiz-result" id="quiz-result"></div>
-          <button class="btn-ghost-dark" onclick="resetQuiz()">
-            Volver a empezar
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CATALOGO FILTRABLE -->
-  <section id="catalogo" class="section-dark">
-    <div class="wrapper">
-      <h2 class="section-title">Catálogo de Experiencias</h2>
-      <p class="section-sub">
-        Filtra por objetivo para encontrar la experiencia perfecta
-      </p>
-      <div class="filters">
-        <button class="filter-btn active" onclick="filterExp('todos', this)">
-          Todos
-        </button>
-        <button class="filter-btn" onclick="filterExp('comunicacion', this)">
-          Comunicación
-        </button>
-        <button class="filter-btn" onclick="filterExp('liderazgo', this)">
-          Liderazgo
-        </button>
-        <button class="filter-btn" onclick="filterExp('motivacion', this)">
-          Motivación
-        </button>
-        <button class="filter-btn" onclick="filterExp('celebracion', this)">
-          Celebración
-        </button>
-      </div>
-      <div class="exp-cards">
-        <div class="exp-card" data-obj="comunicacion liderazgo">
-          <div class="exp-badge">Presencial</div>
-          <div class="exp-icon"><i class="fa-solid fa-virus"></i></div>
-          <h3>El Virus</h3>
-          <p>
-            Carrera contrarreloj para salvar a la humanidad. Potencia la
-            comunicación bajo presión.
-          </p>
-          <div class="exp-meta">
-            <span><i class="fa-solid fa-user-group"></i> 5-20 personas</span><span><i class="fa-solid fa-clock"></i> 60
-              min</span>
-          </div>
-          <a href="#contacto" class="btn-outline">Reservar</a>
-        </div>
-        <div class="exp-card" data-obj="comunicacion motivacion">
-          <div class="exp-badge">Presencial</div>
-          <div class="exp-icon"><i class="fa-solid fa-user-secret"></i></div>
-          <h3>El Asesino</h3>
-          <p>
-            Resuelve un crimen en equipo. Ideal para trabajar la escucha
-            activa y toma de decisiones.
-          </p>
-          <div class="exp-meta">
-            <span><i class="fa-solid fa-user-group"></i> 5-20 personas</span><span><i class="fa-solid fa-clock"></i> 60
-              min</span>
-          </div>
-          <a href="#contacto" class="btn-outline">Reservar</a>
-        </div>
-        <div class="exp-card" data-obj="motivacion celebracion">
-          <div class="exp-badge">Presencial / Online</div>
-          <div class="exp-icon"><i class="fa-solid fa-users"></i></div>
-          <h3>Dinamicas de Grupo</h3>
-          <p>
-            Actividades para romper el hielo y cohesionar equipos en cualquier
-            momento del año.
-          </p>
-          <div class="exp-meta">
-            <span><i class="fa-solid fa-user-group"></i> 10-50 personas</span><span><i class="fa-solid fa-clock"></i> 90
-              min</span>
-          </div>
-          <a href="#contacto" class="btn-outline">Reservar</a>
-        </div>
-        <div class="exp-card" data-obj="liderazgo comunicacion">
-          <div class="exp-badge">Híbrido</div>
-          <div class="exp-icon"><i class="fa-solid fa-laptop"></i></div>
-          <h3>Escape Room Online</h3>
-          <p>
-            La misma emoción del escape room adaptada para equipos remotos o
-            distribuidos.
-          </p>
-          <div class="exp-meta">
-            <span><i class="fa-solid fa-user-group"></i> 5-30 personas</span><span><i class="fa-solid fa-clock"></i> 60
-              min</span>
-          </div>
-          <a href="#contacto" class="btn-outline">Reservar</a>
-        </div>
-        <div class="exp-card" data-obj="celebracion motivacion">
-          <div class="exp-badge">Presencial</div>
-          <div class="exp-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
-          <h3>Evento de Fin de Año</h3>
-          <p>
-            Cierra el año por todo lo alto con una experiencia memorable para
-            toda la empresa.
-          </p>
-          <div class="exp-meta">
-            <span><i class="fa-solid fa-user-group"></i> 20-100 personas</span><span><i class="fa-solid fa-clock"></i>
-              2-3 h</span>
-          </div>
-          <a href="#contacto" class="btn-outline">Reservar</a>
-        </div>
-        <div class="exp-card" data-obj="comunicacion liderazgo motivacion">
-          <div class="exp-badge">Presencial</div>
-          <div class="exp-icon"><i class="fa-solid fa-rocket"></i></div>
-          <h3>Onboarding Experiencial</h3>
-          <p>
-            Integra a los nuevos empleados de forma dinámica y memorable desde
-            el primer día.
-          </p>
-          <div class="exp-meta">
-            <span><i class="fa-solid fa-user-group"></i> 5-30 personas</span><span><i class="fa-solid fa-clock"></i> 2
-              h</span>
-          </div>
-          <a href="#contacto" class="btn-outline">Reservar</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EMPRESAS: CASOS DE USO -->
-  <section id="empresas" class="section-light">
-    <div class="wrapper">
-      <h2 class="section-title dark">Soluciones para Empresas</h2>
-      <p class="section-sub dark">
-        Cada evento resuelve un problema real de tu equipo
-      </p>
-      <div class="use-cases">
-        <div class="use-case">
-          <div class="use-icon"><i class="fa-solid fa-rocket"></i></div>
-          <h4>Onboarding</h4>
-          <p>
-            Integra a los nuevos empleados desde el primer día con una
-            experiencia que fomenta las relaciones y el sentido de
-            pertenencia.
-          </p>
-        </div>
-        <div class="use-case">
-          <div class="use-icon"><i class="fa-solid fa-handshake"></i></div>
-          <h4>Integración de equipos</h4>
-          <p>
-            Fusiona departamentos, equipos remotos o recién formados a través
-            de retos compartidos que crean vínculos reales.
-          </p>
-        </div>
-        <div class="use-case">
-          <div class="use-icon"><i class="fa-solid fa-gift"></i></div>
-          <h4>Incentivos y premios</h4>
-          <p>
-            Recompensa a tu equipo con una experiencia que van a recordar. Una
-            alternativa diferente a los incentivos tradicionales.
-          </p>
-        </div>
-        <div class="use-case">
-          <div class="use-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
-          <h4>Evento de fin de año</h4>
-          <p>
-            Cierra el año con energía y una experiencia compartida que
-            refuerza el orgullo de equipo.
-          </p>
-        </div>
-        <div class="use-case">
-          <div class="use-icon"><i class="fa-solid fa-bullhorn"></i></div>
-          <h4>Comunicación interna</h4>
-          <p>
-            Mejora los canales de comunicación entre perfiles distintos
-            mediante dinámicas que rompen barreras y jerarquías.
-          </p>
-        </div>
-        <div class="use-case">
-          <div class="use-icon"><i class="fa-solid fa-crown"></i></div>
-          <h4>Desarrollo del liderazgo</h4>
-          <p>
-            Situaciones de presión controlada que permiten identificar y
-            potenciar líderes naturales dentro del equipo.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPARADOR -->
-  <section class="section-dark">
-    <div class="wrapper">
-      <h2 class="section-title">Compara nuestras experiencias</h2>
-      <p class="section-sub">Elige la que mejor encaja con tu equipo</p>
-      <div class="table-wrap">
-        <table class="comparador">
-          <thead>
-            <tr>
-              <th>Experiencia</th>
-              <th>Personas</th>
-              <th>Duración</th>
-              <th>Objetivo</th>
-              <th>Modalidad</th>
-              <th>Intensidad</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>El Virus</strong></td>
-              <td>5 - 20</td>
-              <td>60 min</td>
-              <td>Comunicación</td>
-              <td>Presencial</td>
-              <td><i class="fa-solid fa-fire" style="color: #ff6600;"></i><i class="fa-solid fa-fire"
-                  style="color: #ff6600;"></i><i class="fa-solid fa-fire" style="color: #ff6600;"></i></td>
-            </tr>
-            <tr>
-              <td><strong>El Asesino</strong></td>
-              <td>5 - 20</td>
-              <td>60 min</td>
-              <td>Toma de decisiones</td>
-              <td>Presencial</td>
-              <td><i class="fa-solid fa-fire" style="color: #ff6600;"></i><i class="fa-solid fa-fire"
-                  style="color: #ff6600;"></i><i class="fa-solid fa-fire" style="color: #ff6600;"></i></td>
-            </tr>
-            <tr>
-              <td><strong>Dinamicas de Grupo</strong></td>
-              <td>10 - 50</td>
-              <td>90 min</td>
-              <td>Cohesión</td>
-              <td>Presencial / Online</td>
-              <td><i class="fa-solid fa-fire" style="color: #ff6600;"></i><i class="fa-solid fa-fire"
-                  style="color: #ff6600;"></i></td>
-            </tr>
-            <tr>
-              <td><strong>Escape Room Online</strong></td>
-              <td>5 - 30</td>
-              <td>60 min</td>
-              <td>Comunicación</td>
-              <td>Online</td>
-              <td><i class="fa-solid fa-fire" style="color: #ff6600;"></i><i class="fa-solid fa-fire"
-                  style="color: #ff6600;"></i></td>
-            </tr>
-            <tr>
-              <td><strong>Fin de Año</strong></td>
-              <td>20 - 100</td>
-              <td>2 - 3 h</td>
-              <td>Celebración</td>
-              <td>Presencial</td>
-              <td><i class="fa-solid fa-fire" style="color: #ff6600;"></i></td>
-            </tr>
-            <tr>
-              <td><strong>Onboarding</strong></td>
-              <td>5 - 30</td>
-              <td>2 h</td>
-              <td>Integración</td>
-              <td>Presencial</td>
-              <td><i class="fa-solid fa-fire" style="color: #ff6600;"></i><i class="fa-solid fa-fire"
-                  style="color: #ff6600;"></i></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRECIOS -->
-  <section id="precios" class="section-light">
-    <div class="wrapper">
-      <h2 class="section-title dark">Precios orientativos</h2>
-      <p class="section-sub dark">
-        Sin sorpresas. Packs pensados para cada tipo de empresa
-      </p>
-      <div class="pricing">
-        <div class="price-card">
-          <h3>Basico</h3>
-          <div class="price">
-            Desde <strong>15&euro;</strong><span>/persona</span>
-          </div>
-          <ul>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> 1 experiencia (60 min)</li>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Hasta 20 personas</li>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Modalidad presencial</li>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Monitor incluido</li>
-            <li><i class="fa-solid fa-xmark" style="color: #e05500;"></i> Personalización</li>
-          </ul>
-          <a href="#contacto" class="btn">Solicitar</a>
-        </div>
-        <div class="price-card featured">
-          <div class="price-badge">Más popular</div>
-          <h3>Profesional</h3>
-          <div class="price">
-            Desde <strong>25&euro;</strong><span>/persona</span>
-          </div>
-          <ul>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> 2 experiencias combinadas</li>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Hasta 50 personas</li>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Presencial, online o hibrido</li>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Monitor + coordinador</li>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Branding basico</li>
-          </ul>
-          <a href="#contacto" class="btn">Solicitar</a>
-        </div>
-        <div class="price-card">
-          <h3>Corporativo</h3>
-          <div class="price"><strong>A medida</strong></div>
-          <ul>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Experiencia personalizada</li>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Sin limite de personas</li>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Cualquier modalidad</li>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Branding completo</li>
-            <li><i class="fa-solid fa-check" style="color: #25d366;"></i> Historia y retos a medida</li>
-          </ul>
-          <a href="#contacto" class="btn">Contactar</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PERSONALIZACION -->
-  <section class="section-dark">
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="section-light">
     <div class="wrapper custom-section">
       <div class="custom-text">
-        <h2>Diseñamos experiencias a medida para tu empresa</h2>
-        <p>
-          No tienes que encajar en un pack estandar. Adaptamos cada detalle a
-          tu equipo, tus objetivos y tu identidad corporativa.
+        <h2 class="section-title dark" style="text-align: left;">El asesino de Keylock City</h2>
+        <p class="section-sub dark" style="text-align: left; margin-bottom: 24px;">Hall Escape para grupos grandes</p>
+        <p style="color: #555; font-size: 15px; line-height: 1.7; margin-bottom: 24px;">
+          El cuerpo policial de Keylock City va detrás de un asesino en serie que ya se ha cobrado siete víctimas. Su
+          punto débil es que le encantan los juegos y va dejando pistas sobre su identidad, pero son tan difíciles que
+          nadie consigue detenerlo. ¿Eres tú el detective que lo encerrará de una vez por todas?
         </p>
         <ul class="custom-list">
-          <li><i class="fa-solid fa-circle-check" style="color: #ff6600; margin-right: 8px;"></i> Branding de tu empresa
-            integrado en el juego</li>
-          <li><i class="fa-solid fa-circle-check" style="color: #ff6600; margin-right: 8px;"></i> Historias y retos
-            personalizados</li>
-          <li><i class="fa-solid fa-circle-check" style="color: #ff6600; margin-right: 8px;"></i> Eventos en tus propias
-            oficinas</li>
-          <li><i class="fa-solid fa-circle-check" style="color: #ff6600; margin-right: 8px;"></i> Disponible en
-            modalidad online o hibrida</li>
-          <li><i class="fa-solid fa-circle-check" style="color: #ff6600; margin-right: 8px;"></i> Alineado con tus
-            objetivos de RRHH</li>
+          <li><i class="fa-solid fa-location-dot" style="color: #ff6600; margin-right: 8px;"></i> <strong>Juego
+              portátil:</strong> casas, locales y empresas</li>
+          <li><i class="fa-solid fa-child" style="color: #ff6600; margin-right: 8px;"></i> <strong>Edades:</strong> a
+            partir de 10 años</li>
+          <li><i class="fa-solid fa-users" style="color: #ff6600; margin-right: 8px;"></i> <strong>Jugadores:</strong>
+            de 15 a +200 personas</li>
         </ul>
-        <a href="#contacto" class="btn">Hablemos de tu proyecto</a>
       </div>
       <div class="custom-visual">
-        <div class="custom-placeholder">
-          <i class="fa-solid fa-wand-magic-sparkles" style="color: #ff6600;"></i><br />Experiencia<br />a medida
+        <div class="custom-placeholder" style="background: #222; border-color: #ff6600;">
+          <i class="fa-solid fa-user-secret"
+            style="color: #ff6600; margin-bottom: 15px; font-size: 50px;"></i><br /><span
+            style="color: white; font-size: 24px;">El Asesino</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPRESAS E INSTITUCIONES -->
+  <section id="empresas" class="section-dark">
+    <div class="wrapper">
+      <h2 class="section-title">Eventos para Instituciones y Empresas</h2>
+      <p class="section-sub">
+        Adaptamos "El Asesino" a las necesidades de tu grupo
+      </p>
+      <div class="use-cases">
+        <div class="use-case" style="background: #2a2a2a; border: 1px solid #444;">
+          <div class="use-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h4 style="color: white;">Eventos Corporativos</h4>
+          <p style="color: #aaa;">
+            Actividades de Team Building diseñadas para mejorar la comunicación, romper el hielo y fortalecer la
+            cohesión entre compañeros de trabajo de una forma divertida.
+          </p>
+        </div>
+        <div class="use-case" style="background: #2a2a2a; border: 1px solid #444;">
+          <div class="use-icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h4 style="color: white;">Eventos de Ayuntamiento</h4>
+          <p style="color: #aaa;">
+            Ideales para programaciones culturales, fiestas mayores o eventos municipales. Una actividad diferente que
+            atrae a todo tipo de público.
+          </p>
+        </div>
+        <div class="use-case" style="background: #2a2a2a; border: 1px solid #444;">
+          <div class="use-icon"><i class="fa-solid fa-school"></i></div>
+          <h4 style="color: white;">Escuelas y Colegios</h4>
+          <p style="color: #aaa;">
+            Una experiencia educativa e interactiva que fomenta el pensamiento crítico y el trabajo en equipo. <strong
+              style="color: #ff6600;">¡Disponible también en inglés!</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- PARTICULARES -->
+  <section id="particulares" class="section-light">
+    <div class="wrapper">
+      <h2 class="section-title dark">Eventos para Particulares</h2>
+      <p class="section-sub dark">
+        Lleva la diversión y el misterio a tus celebraciones
+      </p>
+      <div class="cards">
+        <div class="card" style="background: white; border: 1px solid #ddd;">
+          <h3 style="color: #111;"><i class="fa-solid fa-child-reaching" style="color: #ff6600; margin-right: 8px;"></i>
+            Para Niños</h3>
+          <p style="color: #555;">La opción perfecta para cumpleaños, comuniones y fiestas infantiles. Adaptamos el
+            misterio para que los más pequeños se sientan como auténticos detectives resolviendo su primer gran caso de
+            forma divertida.</p>
+        </div>
+        <div class="card" style="background: white; border: 1px solid #ddd;">
+          <h3 style="color: #111;"><i class="fa-solid fa-champagne-glasses"
+              style="color: #ff6600; margin-right: 8px;"></i> Para Adultos</h3>
+          <p style="color: #555;">Ideal para grupos de amigos, despedidas de soltero/a o celebraciones familiares. Un
+            reto lleno de sorpresas y giros inesperados donde tendréis que sacar vuestras mejores dotes de
+            investigación.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIOS -->
-  <section id="testimonios" class="section-light">
+  <section id="testimonios" class="section-dark">
     <div class="wrapper">
-      <h2 class="section-title dark">Lo que dicen nuestros clientes</h2>
-      <p class="section-sub dark">
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="section-sub">
         Empresas que ya han confiado en Hallescape
       </p>
       <div class="testimonials">
@@ -534,31 +217,6 @@
     </div>
   </section>
 
-  <!-- PARTICULARES -->
-  <section id="particulares" class="section-dark">
-    <div class="wrapper">
-      <h2 class="section-title">Eventos para Particulares</h2>
-      <p class="section-sub">
-        Celebra con estilo y lleva la diversión a otro nivel
-      </p>
-      <div class="cards">
-        <div class="card">
-          <h3><i class="fa-solid fa-cake-candles" style="color: #ff6600; margin-right: 8px;"></i> Cumpleaños</h3>
-          <p>Una forma diferente y memorable de celebrar tu dia especial.</p>
-        </div>
-        <div class="card">
-          <h3><i class="fa-solid fa-ring" style="color: #ff6600; margin-right: 8px;"></i> Despedidas</h3>
-          <p>La despedida perfecta: emoción, risas y momentos únicos.</p>
-        </div>
-        <div class="card">
-          <h3><i class="fa-solid fa-champagne-glasses" style="color: #ff6600; margin-right: 8px;"></i> Fiestas y
-            Celebraciones</h3>
-          <p>Cualquier motivo es bueno para vivir una aventura juntos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACTO -->
   <section id="contacto" class="section-light">
     <div class="wrapper wrapper-narrow">
@@ -581,13 +239,12 @@
           <input type="date" />
         </div>
         <select>
-          <option value="" disabled selected>Objetivo del evento</option>
-          <option>Team Building / Comunicación</option>
-          <option>Onboarding</option>
-          <option>Motivación e incentivos</option>
-          <option>Evento de fin de año</option>
-          <option>Celebración particular</option>
-          <option>Otro</option>
+          <option value="" disabled selected>Tipo de evento</option>
+          <option>Evento Corporativo (Team Building)</option>
+          <option>Evento de Ayuntamiento</option>
+          <option>Escuela / Colegio</option>
+          <option>Particulares: Niños</option>
+          <option>Particulares: Adultos</option>
         </select>
         <textarea placeholder="Cuéntanos más detalles sobre tu evento..."></textarea>
         <button type="submit" class="btn">
@@ -610,9 +267,9 @@
       <div class="footer-col">
         <h4>Navegación</h4>
         <a href="#">Inicio</a>
-        <a href="#catalogo">Experiencias</a>
+        <a href="#experiencia">La Experiencia</a>
         <a href="#empresas">Empresas</a>
-        <a href="#precios">Precios</a>
+        <a href="#particulares">Particulares</a>
         <a href="#testimonios">Clientes</a>
         <a href="#contacto">Contacto</a>
       </div>
