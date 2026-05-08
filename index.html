@@ -1,297 +1,385 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hallescape</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hallescape</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <button
+        class="hamburger"
+        id="menuBtn"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <a href="index.html" class="logo">Hallescape</a>
+      <a href="#contacto" class="logo-contacto">Contacto</a>
+      <nav id="mainNav">
+        <a href="#" onclick="closeMenu()">Inicio</a>
+        <a href="#experiencia" onclick="closeMenu()">La Experiencia</a>
+        <a href="#empresas" onclick="closeMenu()">Empresas</a>
+        <a href="#particulares" onclick="closeMenu()">Particulares</a>
+        <a href="#testimonios" onclick="closeMenu()">Clientes</a>
+        <a href="#contacto" onclick="closeMenu()">Contacto</a>
+      </nav>
+    </header>
 
-<body>
-  <!-- HEADER -->
-  <header>
-    <button class="hamburger" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="logo">Hallescape</div>
-    <nav id="mainNav">
-      <a href="#" onclick="closeMenu()">Inicio</a>
-      <a href="#experiencia" onclick="closeMenu()">La Experiencia</a>
-      <a href="#empresas" onclick="closeMenu()">Empresas</a>
-      <a href="#particulares" onclick="closeMenu()">Particulares</a>
-      <a href="#testimonios" onclick="closeMenu()">Clientes</a>
-      <a href="#contacto" onclick="closeMenu()">Contacto</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <p class="hero-tag">
-        <i class="fa-solid fa-user-secret" style="color: #ff6600;"></i> EL ASESINO &middot; PARA PARTICULARES Y EMPRESAS
-      </p>
-      <h1>
-        Resuelve un misterio interactivo con tu equipo
-      </h1>
-      <p class="hero-sub">
-        Trabaja la comunicación, la lógica y el pensamiento crítico bajo presión. Una aventura inmersiva ideal para
-        amigos, colegios y empresas.
-      </p>
-      <div class="hero-btns">
-        <a href="#experiencia" class="btn">Descubrir la experiencia</a>
-        <a href="#contacto" class="btn-ghost">Solicitar propuesto</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- BARRA DE CONFIANZA -->
-  <div class="trust-bar">
-    <div class="trust-item">
-      <span class="trust-num">+200</span><span>Empresas atendidas</span>
-    </div>
-    <div class="trust-item">
-      <span class="trust-num">8</span><span>Años de experiencia</span>
-    </div>
-    <div class="trust-item">
-      <span class="trust-num">4.9&#9733;</span><span>Valoración media</span>
-    </div>
-    <div class="trust-item">
-      <span class="trust-num">+5.000</span><span>Participantes</span>
-    </div>
-  </div>
-
-  <!-- LA EXPERIENCIA -->
-  <section id="experiencia" class="section-light">
-    <div class="wrapper custom-section">
-      <div class="custom-text">
-        <h2 class="section-title dark" style="text-align: left;">El asesino de Keylock City</h2>
-        <p class="section-sub dark" style="text-align: left; margin-bottom: 24px;">Hall Escape para grupos grandes</p>
-        <p style="color: #555; font-size: 15px; line-height: 1.7; margin-bottom: 24px;">
-          El cuerpo policial de Keylock City va detrás de un asesino en serie que ya se ha cobrado siete víctimas. Su
-          punto débil es que le encantan los juegos y va dejando pistas sobre su identidad, pero son tan difíciles que
-          nadie consigue detenerlo. ¿Eres tú el detective que lo encerrará de una vez por todas?
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-tag">
+          <i class="fa-solid fa-user-secret" style="color: #ff6600"></i> EL
+          ASESINO &middot; PARA PARTICULARES Y EMPRESAS
         </p>
-        <ul class="custom-list">
-          <li><i class="fa-solid fa-location-dot" style="color: #ff6600; margin-right: 8px;"></i> <strong>Juego
-              portátil:</strong> casas, locales y empresas</li>
-          <li><i class="fa-solid fa-child" style="color: #ff6600; margin-right: 8px;"></i> <strong>Edades:</strong> a
-            partir de 10 años</li>
-          <li><i class="fa-solid fa-users" style="color: #ff6600; margin-right: 8px;"></i> <strong>Jugadores:</strong>
-            de 15 a +200 personas</li>
-        </ul>
-      </div>
-      <div class="custom-visual">
-        <div class="custom-placeholder" style="padding: 0; overflow: hidden; border-color: #ff6600;">
-          <img src="images/imagen2.jpg" alt="El Asesino" style="width: 100%; height: 100%; object-fit: cover; border-radius: 14px;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EMPRESAS E INSTITUCIONES -->
-  <section id="empresas" class="section-dark">
-    <div class="wrapper">
-      <h2 class="section-title">Eventos para Instituciones y Empresas</h2>
-      <p class="section-sub">
-        Adaptamos "El Asesino" a las necesidades de tu grupo
-      </p>
-      <div class="use-cases">
-        <div class="use-case" style="background: #2a2a2a; border: 1px solid #444;">
-          <div class="use-icon"><i class="fa-solid fa-briefcase"></i></div>
-          <h4 style="color: white;">Eventos Corporativos</h4>
-          <p style="color: #aaa;">
-            Actividades de Team Building diseñadas para mejorar la comunicación, romper el hielo y fortalecer la
-            cohesión entre compañeros de trabajo de una forma divertida.
-          </p>
-        </div>
-        <div class="use-case" style="background: #2a2a2a; border: 1px solid #444;">
-          <div class="use-icon"><i class="fa-solid fa-building-columns"></i></div>
-          <h4 style="color: white;">Eventos de Ayuntamiento</h4>
-          <p style="color: #aaa;">
-            Ideales para programaciones culturales, fiestas mayores o eventos municipales. Una actividad diferente que
-            atrae a todo tipo de público.
-          </p>
-        </div>
-        <div class="use-case" style="background: #2a2a2a; border: 1px solid #444;">
-          <div class="use-icon"><i class="fa-solid fa-school"></i></div>
-          <h4 style="color: white;">Escuelas y Colegios</h4>
-          <p style="color: #aaa;">
-            Una experiencia educativa e interactiva que fomenta el pensamiento crítico y el trabajo en equipo. <strong
-              style="color: #ff6600;">¡Disponible también en inglés!</strong>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- PARTICULARES -->
-  <section id="particulares" class="section-light">
-    <div class="wrapper">
-      <h2 class="section-title dark">Eventos para Particulares</h2>
-      <p class="section-sub dark">
-        Lleva la diversión y el misterio a tus celebraciones
-      </p>
-      <div class="cards">
-        <div class="card" style="background: white; border: 1px solid #ddd;">
-          <h3 style="color: #111;"><i class="fa-solid fa-child-reaching" style="color: #ff6600; margin-right: 8px;"></i>
-            Para Niños</h3>
-          <p style="color: #555;">La opción perfecta para cumpleaños, comuniones y fiestas infantiles. Adaptamos el
-            misterio para que los más pequeños se sientan como auténticos detectives resolviendo su primer gran caso de
-            forma divertida.</p>
-        </div>
-        <div class="card" style="background: white; border: 1px solid #ddd;">
-          <h3 style="color: #111;"><i class="fa-solid fa-champagne-glasses"
-              style="color: #ff6600; margin-right: 8px;"></i> Para Adultos</h3>
-          <p style="color: #555;">Ideal para grupos de amigos, despedidas de soltero/a o celebraciones familiares. Un
-            reto lleno de sorpresas y giros inesperados donde tendréis que sacar vuestras mejores dotes de
-            investigación.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIOS -->
-  <section id="testimonios" class="section-dark">
-    <div class="wrapper">
-      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-      <p class="section-sub">
-        Empresas que ya han confiado en Hallescape
-      </p>
-      <div class="testimonials">
-        <div class="testimonial">
-          <p>
-            "Contratamos el escape room para nuestro evento de fin de año y
-            fue un éxito total. El equipo salió encantado y hablando del
-            evento semanas después."
-          </p>
-          <div class="testimonial-author">
-            <div class="avatar">MG</div>
-            <div>
-              <strong>Maria Garcia</strong>
-              <span>Directora de RRHH &middot; TechCorp</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <p>
-            "Lo usamos para el onboarding de 15 nuevos empleados. Fue la forma
-            más efectiva de romper el hielo que hemos probado. Lo repetiremos
-            sin duda."
-          </p>
-          <div class="testimonial-author">
-            <div class="avatar">JP</div>
-            <div>
-              <strong>Jordi Puig</strong>
-              <span>People Manager &middot; StartupBCN</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <p>
-            "Teníamos dos departamentos que no se comunicaban bien. Despues
-            del evento notamos un cambio real en la dinamica del equipo. Muy
-            recomendable."
-          </p>
-          <div class="testimonial-author">
-            <div class="avatar">RL</div>
-            <div>
-              <strong>Rosa Lopez</strong>
-              <span>CEO &middot; Agencia Creativa</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="logos-bar">
-        <span>TechCorp</span>
-        <span>StartupBCN</span>
-        <span>Agencia Creativa</span>
-        <span>GlobalServices</span>
-        <span>InnoGroup</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="section-light">
-    <div class="wrapper wrapper-narrow">
-      <h2 class="section-title dark">Solicita tu propuesta en 24h</h2>
-      <p class="section-sub dark">
-        Cuéntanos que necesitas y te preparamos una propuesta personalizada
-        sin compromiso
-      </p>
-      <form class="contact-form">
-        <div class="form-row">
-          <input type="text" placeholder="Nombre y apellidos" required />
-          <input type="text" placeholder="Empresa" required />
-        </div>
-        <div class="form-row">
-          <input type="email" placeholder="Email corporativo" required />
-          <input type="tel" placeholder="Telefono" />
-        </div>
-        <div class="form-row">
-          <input type="number" placeholder="N de personas" min="1" />
-          <input type="date" />
-        </div>
-        <select>
-          <option value="" disabled selected>Tipo de evento</option>
-          <option>Evento Corporativo (Team Building)</option>
-          <option>Evento de Ayuntamiento</option>
-          <option>Escuela / Colegio</option>
-          <option>Particulares: Niños</option>
-          <option>Particulares: Adultos</option>
-        </select>
-        <textarea placeholder="Cuéntanos más detalles sobre tu evento..."></textarea>
-        <button type="submit" class="btn">
-          Enviar solicitud &middot; Respuesta en 24h
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-col">
-        <div class="footer-logo">Hallescape</div>
-        <p>
-          Escape room y team building en Barcelona para empresas, grupos y
-          celebraciones.
+        <h1>Resuelve un misterio interactivo con tu equipo</h1>
+        <p class="hero-sub">
+          Trabaja la comunicación, la lógica y el pensamiento crítico bajo
+          presión. Una aventura inmersiva ideal para amigos, colegios y
+          empresas.
         </p>
+        <div class="hero-btns">
+          <a href="#experiencia" class="btn">Descubrir la experiencia</a>
+          <a href="#contacto" class="btn-ghost">Solicitar propuesto</a>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Navegación</h4>
-        <a href="#">Inicio</a>
-        <a href="#experiencia">La Experiencia</a>
-        <a href="#empresas">Empresas</a>
-        <a href="#particulares">Particulares</a>
-        <a href="#testimonios">Clientes</a>
-        <a href="#contacto">Contacto</a>
+    </section>
+
+    <!-- BARRA DE CONFIANZA -->
+    <div class="trust-bar">
+      <div class="trust-item">
+        <span class="trust-num">+200</span><span>Empresas atendidas</span>
       </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <p>info@hallescape.com</p>
-        <p>Barcelona, Espana</p>
-        <p>Respuesta en menos de 24h</p>
+      <div class="trust-item">
+        <span class="trust-num">8</span><span>Años de experiencia</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">4.9&#9733;</span><span>Valoración media</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">+5.000</span><span>Participantes</span>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Hallescape &middot; Todos los derechos reservados</p>
-    </div>
-  </footer>
 
-  <!-- WHATSAPP FLOTANTE -->
-  <a class="whatsapp-btn" href="https://wa.me/34600000000" target="_blank" title="Escribenos por WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+    <!-- LA EXPERIENCIA -->
+    <section id="experiencia" class="section-light">
+      <div class="wrapper custom-section">
+        <div class="custom-text">
+          <h2 class="section-title dark" style="text-align: left">
+            El asesino de Keylock City
+          </h2>
+          <p
+            class="section-sub dark"
+            style="text-align: left; margin-bottom: 24px"
+          >
+            Hall Escape para grupos grandes
+          </p>
+          <p
+            style="
+              color: #555;
+              font-size: 15px;
+              line-height: 1.7;
+              margin-bottom: 24px;
+            "
+          >
+            El cuerpo policial de Keylock City va detrás de un asesino en serie
+            que ya se ha cobrado siete víctimas. Su punto débil es que le
+            encantan los juegos y va dejando pistas sobre su identidad, pero son
+            tan difíciles que nadie consigue detenerlo. ¿Eres tú el detective
+            que lo encerrará de una vez por todas?
+          </p>
+          <ul class="custom-list">
+            <li>
+              <i
+                class="fa-solid fa-location-dot"
+                style="color: #ff6600; margin-right: 8px"
+              ></i>
+              <strong>Juego portátil:</strong> casas, locales y empresas
+            </li>
+            <li>
+              <i
+                class="fa-solid fa-child"
+                style="color: #ff6600; margin-right: 8px"
+              ></i>
+              <strong>Edades:</strong> a partir de 10 años
+            </li>
+            <li>
+              <i
+                class="fa-solid fa-users"
+                style="color: #ff6600; margin-right: 8px"
+              ></i>
+              <strong>Jugadores:</strong> de 15 a +200 personas
+            </li>
+          </ul>
+        </div>
+        <div class="custom-visual">
+          <div
+            class="custom-placeholder"
+            style="padding: 0; overflow: hidden; border-color: #ff6600"
+          >
+            <img
+              src="images/imagen2.jpg"
+              alt="El Asesino"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 14px;
+              "
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script src="script.js"></script>
-</body>
+    <!-- EMPRESAS E INSTITUCIONES -->
+    <section id="empresas" class="section-dark">
+      <div class="wrapper">
+        <h2 class="section-title">Eventos para Instituciones y Empresas</h2>
+        <p class="section-sub">
+          Adaptamos "El Asesino" a las necesidades de tu grupo
+        </p>
+        <div class="use-cases">
+          <div
+            class="use-case"
+            style="background: #2a2a2a; border: 1px solid #444"
+          >
+            <div class="use-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h4 style="color: white">Eventos Corporativos</h4>
+            <p style="color: #aaa">
+              Actividades de Team Building diseñadas para mejorar la
+              comunicación, romper el hielo y fortalecer la cohesión entre
+              compañeros de trabajo de una forma divertida.
+            </p>
+          </div>
+          <div
+            class="use-case"
+            style="background: #2a2a2a; border: 1px solid #444"
+          >
+            <div class="use-icon">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <h4 style="color: white">Eventos de Ayuntamiento</h4>
+            <p style="color: #aaa">
+              Ideales para programaciones culturales, fiestas mayores o eventos
+              municipales. Una actividad diferente que atrae a todo tipo de
+              público.
+            </p>
+          </div>
+          <div
+            class="use-case"
+            style="background: #2a2a2a; border: 1px solid #444"
+          >
+            <div class="use-icon"><i class="fa-solid fa-school"></i></div>
+            <h4 style="color: white">Escuelas y Colegios</h4>
+            <p style="color: #aaa">
+              Una experiencia educativa e interactiva que fomenta el pensamiento
+              crítico y el trabajo en equipo.
+              <strong style="color: #ff6600"
+                >¡Disponible también en inglés!</strong
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- PARTICULARES -->
+    <section id="particulares" class="section-light">
+      <div class="wrapper">
+        <h2 class="section-title dark">Eventos para Particulares</h2>
+        <p class="section-sub dark">
+          Lleva la diversión y el misterio a tus celebraciones
+        </p>
+        <div class="cards">
+          <div class="card" style="background: white; border: 1px solid #ddd">
+            <h3 style="color: #111">
+              <i
+                class="fa-solid fa-child-reaching"
+                style="color: #ff6600; margin-right: 8px"
+              ></i>
+              Para Niños
+            </h3>
+            <p style="color: #555">
+              La opción perfecta para cumpleaños, comuniones y fiestas
+              infantiles. Adaptamos el misterio para que los más pequeños se
+              sientan como auténticos detectives resolviendo su primer gran caso
+              de forma divertida.
+            </p>
+          </div>
+          <div class="card" style="background: white; border: 1px solid #ddd">
+            <h3 style="color: #111">
+              <i
+                class="fa-solid fa-champagne-glasses"
+                style="color: #ff6600; margin-right: 8px"
+              ></i>
+              Para Adultos
+            </h3>
+            <p style="color: #555">
+              Ideal para grupos de amigos, despedidas de soltero/a o
+              celebraciones familiares. Un reto lleno de sorpresas y giros
+              inesperados donde tendréis que sacar vuestras mejores dotes de
+              investigación.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="section-dark">
+      <div class="wrapper">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <p class="section-sub">Empresas que ya han confiado en Hallescape</p>
+        <div class="testimonials">
+          <div class="testimonial">
+            <p>
+              "Contratamos el escape room para nuestro evento de fin de año y
+              fue un éxito total. El equipo salió encantado y hablando del
+              evento semanas después."
+            </p>
+            <div class="testimonial-author">
+              <div class="avatar">MG</div>
+              <div>
+                <strong>Maria Garcia</strong>
+                <span>Directora de RRHH &middot; TechCorp</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <p>
+              "Lo usamos para el onboarding de 15 nuevos empleados. Fue la forma
+              más efectiva de romper el hielo que hemos probado. Lo repetiremos
+              sin duda."
+            </p>
+            <div class="testimonial-author">
+              <div class="avatar">JP</div>
+              <div>
+                <strong>Jordi Puig</strong>
+                <span>People Manager &middot; StartupBCN</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <p>
+              "Teníamos dos departamentos que no se comunicaban bien. Despues
+              del evento notamos un cambio real en la dinamica del equipo. Muy
+              recomendable."
+            </p>
+            <div class="testimonial-author">
+              <div class="avatar">RL</div>
+              <div>
+                <strong>Rosa Lopez</strong>
+                <span>CEO &middot; Agencia Creativa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="logos-bar">
+          <span>TechCorp</span>
+          <span>StartupBCN</span>
+          <span>Agencia Creativa</span>
+          <span>GlobalServices</span>
+          <span>InnoGroup</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section-light">
+      <div class="wrapper wrapper-narrow">
+        <h2 class="section-title dark">Solicita tu propuesta en 24h</h2>
+        <p class="section-sub dark">
+          Cuéntanos que necesitas y te preparamos una propuesta personalizada
+          sin compromiso
+        </p>
+        <form class="contact-form">
+          <div class="form-row">
+            <input type="text" placeholder="Nombre y apellidos" required />
+            <input type="text" placeholder="Empresa" required />
+          </div>
+          <div class="form-row">
+            <input type="email" placeholder="Email corporativo" required />
+            <input type="tel" placeholder="Telefono" required />
+          </div>
+          <div class="form-row">
+            <input type="number" placeholder="N de personas" min="1" required />
+            <input type="date" required />
+          </div>
+          <select>
+            <option value="" disabled selected>Tipo de evento</option>
+            <option>Evento Corporativo (Team Building)</option>
+            <option>Evento de Ayuntamiento</option>
+            <option>Escuela / Colegio</option>
+            <option>Particulares: Niños</option>
+            <option>Particulares: Adultos</option>
+          </select>
+          <textarea
+            placeholder="Cuéntanos más detalles sobre tu evento..."
+          ></textarea>
+          <button type="submit" class="btn">
+            Enviar solicitud &middot; Respuesta en 24h
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-logo">Hallescape</div>
+          <p>
+            Escape room y team building en Barcelona para empresas, grupos y
+            celebraciones.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <a href="#">Inicio</a>
+          <a href="#experiencia">La Experiencia</a>
+          <a href="#empresas">Empresas</a>
+          <a href="#particulares">Particulares</a>
+          <a href="#testimonios">Clientes</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>info@hallescape.com</p>
+          <p>Barcelona, Espana</p>
+          <p>Respuesta en menos de 24h</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Hallescape &middot; Todos los derechos reservados</p>
+      </div>
+    </footer>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/34600000000"
+      target="_blank"
+      title="Escribenos por WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
 </html>

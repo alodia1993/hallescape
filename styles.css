@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -11,7 +12,7 @@ body {
   background: #fff;
 }
 
-h1, h2, h3, h4, .logo, .section-title, .hero h1, .price-card h3 {
+h1, h2, h3, h4, .logo, .logo-contacto,.footer-logo, .section-title, .hero h1, .price-card h3 {
   font-family: 'Cinzel', serif;
   letter-spacing: 1px;
 }
@@ -44,12 +45,17 @@ header::after {
     #1a1a1a 16px
   );
 }
-
-.logo {
+.logo,
+.logo-contacto {
   font-size: 22px;
   font-weight: bold;
   color: #ff6600;
   letter-spacing: 1px;
+  text-decoration: none;
+}
+.logo-contacto {
+  margin-left: auto;
+  font-size: 14px;
 }
 
 /* ── Hamburguesa ── */
@@ -439,12 +445,13 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
 }
 
 .exp-card:hover {
   border-color: #ff6600;
-  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
+  
 }
 
 .exp-badge {
@@ -497,12 +504,14 @@ nav a:hover {
   background: white;
   border-radius: 12px;
   padding: 30px 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
-  transition: box-shadow 0.2s;
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
+  border: 1px solid transparent;
+  
 }
 
 .use-case:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  border-color: #ff6600 !important;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
 }
 
 .use-icon {
@@ -716,10 +725,11 @@ nav a:hover {
   padding: 30px 26px;
   flex: 1;
   min-width: 260px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   gap: 20px;
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
+  border: 1px solid #333;
 }
 
 .testimonial p {
@@ -728,6 +738,11 @@ nav a:hover {
   line-height: 1.7;
   font-style: italic;
   flex: 1;
+}
+
+.testimonial:hover {
+  border-color: #ff6600;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
 }
 
 .testimonial-author {
@@ -793,11 +808,12 @@ nav a:hover {
   border: 1px solid #333;
   border-radius: 10px;
   padding: 26px 22px;
-  transition: border-color 0.2s;
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
 }
 
 .card:hover {
-  border-color: #ff6600;
+  border-color: #ff6600 !important;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
 }
 
 .card h3 {
